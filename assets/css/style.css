@@ -1,0 +1,25 @@
+.card, #products .test {
+  border: 1px black;
+  background-color: magenta;
+}
+
+#products .title-area {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  background-color: aqua;
+}
+#products .product h1 {
+  color: blue;
+}
+#products .product h3 {
+  color: red;
+}
+#products .test p {
+  color: aqua;
+  transition: all 0.9;
+}
+#products .test p:hover {
+  color: red;
+  font-size: 75px;
+}/*# sourceMappingURL=style.css.map */

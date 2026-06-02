@@ -1,0 +1,40 @@
+@use './partials/variables';
+
+.card{
+    border: 1px black;
+    background-color: magenta;
+}
+
+@mixin title-card-design($background-color) {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  background-color: $background-color;
+}
+
+#products{
+    .title-area{
+      @include title-card-design(aqua)
+    }
+
+    .product{
+        h1{
+            color:variables.$main-color;
+        }
+        h3{
+            color: red
+        }
+    }
+
+    .test{
+        @extend .card;
+        p{
+            color: aqua;
+            transition: all 0.9;
+            &:hover{
+                color: red;
+                font-size: 75px;
+            }
+        }
+    }
+}
