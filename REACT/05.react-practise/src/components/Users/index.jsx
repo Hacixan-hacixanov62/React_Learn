@@ -1,33 +1,42 @@
-import { useState } from "react"
-import { nanoid } from 'nanoid'
-import { FaTrash } from "react-icons/fa";
+import React, { useState } from 'react'
+import { nanoid } from 'nanoid';
+import { FaTrash } from 'react-icons/fa';
 
 const Users = () => {
-    const [users,setUsers]=useState([]);      // Components
-    const[userName,setUserName]=useState("");
-    const[email,setEmail]=useState("");
-    const[age,setAge]=useState(0);
-    
+     const [users,setUsers]=useState([]);      // Components
+    // const[userName,setUserName]=useState("");
+    // const[email,setEmail]=useState("");
+    // const[age,setAge]=useState(0);
+
+    const[user,setUser]=useState({
+        userName:"",
+        email:"",
+        age:0
+    });
 
     const handleSubmit =(e)=>{
       e.preventDefault()
+      
+      if(user.userName && user.email && user.age)
+     {
+        const newUser ={
+        id:nanoid(8),
+        userName:user.userName,
+        email:user.email,                           //Functions
+        age:user.age
+         }
 
-      const newUser ={
-        id:nanoid(),
-        userName:userName,
-        email:email,                           //Functions    
-        age:age
+         setUsers([...users,newUser]);
+         console.log(users);
+
+         setUser({
+           userName:"",
+           email:"",
+           age:0
+         })
       }
 
-      setUsers([...users,newUser]);
-      console.log(users);
-
-      setUserName("")
-      setEmail("")
-      setAge(0)
-
-
-
+      
     }
 
     const handleDeleteUser=(id)=>{
@@ -45,15 +54,15 @@ const Users = () => {
   <fieldset>
     <legend>User Form:</legend>
     <label htmlFor="username">User Name:</label>
-    <input type="text" id="username" name="username" value={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
+    <input type="text" id="username" name="username" value={user.userName} onChange={(e)=>{setUser({...user,userName: e.target.value})}}/>
     <br />
     <br />
     <label htmlFor="email">Email:</label>
-    <input type="email" id="email" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+    <input type="email" id="email" name="email" value={user.email} onChange={(e)=>{setUser({...user,email: e.target.value})}} />
     <br />
     <br />
     <label htmlFor="age">Age:</label>
-    <input type="number" id="age" name="age" value={age} onChange={(e)=>{setAge(e.target.value)}}/>
+    <input type="number" id="age" name="age" value={user.age} onChange={(e)=>{setUser({...user,age: e.target.value})}}/>
     <br />
     <br />
     <input type="submit" defaultValue="Submit" />
@@ -92,3 +101,4 @@ const Users = () => {
 }
 
 export default Users
+
