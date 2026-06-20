@@ -1,0 +1,16 @@
+header{
+    .header{
+        nav{
+            ul{
+                display: flex;
+                gap: 10rem;
+                list-style: none;
+                a{
+                    &.active{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
