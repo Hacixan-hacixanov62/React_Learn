@@ -617,12 +617,35 @@ const itemsCount = 0;
 const response =  itemsCount > 0 ? `Səbətinizdə ${itemsCount} məhsul var` : "Səbət boşdur"
 //console.log(response);
 
+//arrow functions
 
+function salam(ad){
+  return "salam" +ad;
+}
 
+const square =(m)=>{return m*m};
+const square2=(m)=>m*m;
 
+const internetYoxla =new Promise((resolve,reject)=>{
+  let internetVar=true;
 
+  if(internetVar){
+    resolve("internet baglantisi var");
+  }
+  else{
+    reject("internet ugurlu deyil");
+  }
+})
 
-
+internetYoxla.then((mesaj)=>{
+  console.log("Ugur"+mesaj);
+})
+.catch((xeta)=>{
+  console.log("Xeta"+xeta);
+})
+.finally(()=>{
+  console.log("Emeliyyat bitdi");
+})
 
 
 

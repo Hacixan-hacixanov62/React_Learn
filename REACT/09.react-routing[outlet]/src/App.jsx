@@ -10,6 +10,7 @@ import ProductsAdmin from './pages/Admin/Products'
 import AddProduct from './pages/Admin/AddProducts'
 import EditProduct from './pages/Admin/EditProduct'
 import ProductDetails from './pages/Client/ProductDetails'
+import NotFound from './pages/Client/NotFound'
 
 
 
@@ -31,6 +32,7 @@ function App() {
                <Route path=':id' element={<ProductDetails/>}/>
              </Route>
              
+             <Route path='*' element={<NotFound/>}/>
           </Route> 
 
                  {/* Admin Layout */}
@@ -43,6 +45,9 @@ function App() {
             </Route>
 
           </Route>
+
+          
+             {/* <Route path='*' element={<NotFound/>}/> */}
 
         </Routes>
     </>
