@@ -1,11 +1,11 @@
-const BASE_URL = 'https://json-server-test-ruby.vercel.app/'
+const BASE_URL = 'https://fakestoreapi.com'
 
 const ENDPOINTS = {
     // BOOKS: 'books',
     // ORDERS: 'orders',
     // GENRES: 'genres',
     // USERS: 'users'
-    PRODUCTS:"products",
+    BOOKS:"products",
     CATEGORIES:"categories",
 }
 
