@@ -9,6 +9,7 @@ const Products = () => {
   const[products,setProducts]=useState([]);
   const[searchQuery,setSearchQuery]=useState("");
   const[sort,setSort]=useState("default");
+
   const getPorducts =async ()=>{
     try {
       const response=await axios(`${BASE_URL}/${ENDPOINTS.BOOKS}`)
@@ -37,6 +38,7 @@ const Products = () => {
   useEffect(()=>{
     getPorducts()
   },[])
+  
   return (
     <div id="product">
       <div className="container">
