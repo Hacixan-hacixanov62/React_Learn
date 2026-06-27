@@ -5,6 +5,12 @@ import Antd from './components/Antd'
 import Antd2 from './components/Antd2'
 import Antd3 from './components/Antd3'
 import Antd4 from './components/Antd4'
+import Tailwind from './components/Tailwind'
+import SignIn from './components/SignIn'
+import WebPlayer from './components/WebPlayer'
+import Card from './components/Card'
+
+
 
 
 
@@ -13,7 +19,7 @@ function App() {
   return (
     <>
 
-     <Material/>
+     {/* <Material/>
      <hr />
      <hr />
      <Antd/>
@@ -21,11 +27,23 @@ function App() {
      <hr />
      <Antd2/>
      <hr />
+     <hr /> */}
+     {/* <Antd3/> */}
      <hr />
-     <Antd3/>
      <hr />
-     <hr />
-     <Antd4/>
+     {/* <Antd4/> */}
+      <br />
+      <br />
+      <Tailwind/>
+      <br />
+      <br />
+      <SignIn/>
+      <br />
+      <br />
+      <WebPlayer/>
+      <br />
+      <br />
+      <Card/>
 
     </>
   )
